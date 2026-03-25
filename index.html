@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Audacity of Thread | Handcrafted with Love &amp; Profanity</title>
+    <meta name="description" content="Handmade crochet and macramé pieces. Beautifully crafted. Unapologetically priced. Worth every damn cent.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">The Audacity of Thread</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#services">What I Make</a></li>
+                <li><a href="#testimonials">Kind Words</a></li>
+                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">Handcrafted with love &amp; profanity</p>
+            <h1 class="hero-title">The Audacity<br><span>of Thread</span></h1>
+            <p class="hero-subtitle">Crochet &amp; macramé pieces that took me<br>fucking hours. So yeah, they cost that much.</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Commission a Piece</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-backdrop">
+                        <img src="images/kerryn-profile.jpg" alt="Kerryn — The woman behind the knots" class="about-profile-pic">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="section-label">About</p>
+                    <h2 class="section-title">The woman behind<br>the knots</h2>
+                    <p>Hi, I'm Kerryn. I turn yarn into things that make people say "oh wow, you <em>made</em> that?" — and yes, it took longer than you think.</p>
+                    <p>What started as a way to keep my hands busy turned into a full-blown obsession with fibre, texture, and making beautiful things from scratch. Every piece is handmade by me — no machines, no shortcuts, just hours of work and an unreasonable amount of yarn.</p>
+                    <p>I specialise in crochet and macramé pieces for your home, your wardrobe, and that awkward wall that needs <em>something</em>.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Pieces created</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Hours spent</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Regrets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <p class="section-label">Gallery</p>
+            <h2 class="section-title">The proof is in<br>the knotting</h2>
+            <p class="section-subtitle">Every piece, handmade with intention (and a lot of swearing).</p>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="crochet">Crochet</button>
+                <button class="filter-btn" data-filter="macrame">Macramé</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-01.jpg" alt="Granny Square Cardigan — Blue & Pink" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Granny Square Cardigan</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-02.jpg" alt="Granny Square Cardigan — Orange & Purple" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Granny Square Cardigan</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-03.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-04.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-05.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-06.jpg" alt="Crochet Poncho — Blue Ombre" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Crochet Poncho</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-07.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-08.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-09.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-10.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-11.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-12.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-13.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-14.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-15.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-16.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-17.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-18.jpg" alt="Crochet Skirt — White Beach" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Crochet Skirt</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-19.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-20.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-21.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-22.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-23.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-24.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-25.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-26.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-27.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-28.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-29.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-30.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-31.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-32.jpg" alt="Crochet Cardigan — Festival Style" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Festival Cardigan</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-33.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-34.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-35.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-36.jpg" alt="Crochet Cardigan — Pink & Green" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Crochet Cardigan</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-37.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-38.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-39.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-40.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-41.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-42.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-43.jpg" alt="Patchwork Crochet Cardigan" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Patchwork Cardigan</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-44.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-45.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-46.jpg" alt="Crochet Top — Teal & Purple" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Crochet Top</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-47.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-48.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-49.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-50.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-51.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-52.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-53.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="crochet">
+                    <img src="images/gallery/product-54.jpg" alt="Crochet Piece" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Handmade Piece</h3><p>Crochet</p></div>
+                </div>
+                <div class="gallery-item" data-category="macrame">
+                    <img src="images/gallery/product-55.jpg" alt="Macramé Fringe Skirt — Natural" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Macramé Fringe Skirt</h3><p>Macramé</p></div>
+                </div>
+                <div class="gallery-item" data-category="macrame">
+                    <img src="images/gallery/product-56.jpg" alt="Macramé Fringe Skirt — Detail" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Macramé Fringe Skirt</h3><p>Macramé</p></div>
+                </div>
+                <div class="gallery-item" data-category="macrame">
+                    <img src="images/gallery/product-57.jpg" alt="Macramé Fringe Skirt — Black & Gold" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Macramé Fringe Skirt</h3><p>Macramé</p></div>
+                </div>
+                <div class="gallery-item" data-category="macrame">
+                    <img src="images/gallery/product-58.jpg" alt="Macramé Halter Top — Side View" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Macramé Halter Top</h3><p>Macramé</p></div>
+                </div>
+                <div class="gallery-item" data-category="macrame">
+                    <img src="images/gallery/product-59.jpg" alt="Macramé Halter Top — Diamond Knotwork" loading="lazy">
+                    <div class="gallery-item-overlay"><h3>Macramé Halter Top</h3><p>Macramé</p></div>
+                </div>
+            </div>
+
+            <button class="btn load-more-btn" id="loadMoreBtn">Load More</button>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+        <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <p class="section-label">What I Make</p>
+            <h2 class="section-title">Things worth waiting for</h2>
+            <p class="section-subtitle">Custom orders welcome. Patience required. Worth it? Absolutely.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="32" cy="32" r="12"/>
+                            <path d="M32 20V8M32 56V44M44 32h12M8 32h12M41 23l8-8M15 49l8-8M41 41l8 8M15 15l8 8"/>
+                        </svg>
+                    </div>
+                    <h3>Crochet</h3>
+                    <p>Blankets, garments, amigurumi, accessories — if it can be crocheted, I've probably already started making it at 2am.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 8v48M44 8v48M8 20h48M8 44h48"/>
+                            <circle cx="20" cy="20" r="4"/>
+                            <circle cx="44" cy="44" r="4"/>
+                            <circle cx="44" cy="20" r="4"/>
+                            <circle cx="20" cy="44" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>Macramé</h3>
+                    <p>Wall hangings, plant hangers, curtains, and statement pieces. For that wall in your home that's been boring everyone.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M32 8l6 18h18l-14 10 5 18-15-11-15 11 5-18L8 26h18z"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Orders</h3>
+                    <p>Got something specific in mind? Tell me what you want, and I'll tell you how long it'll take (and why it costs that much).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <section class="pull-quote">
+        <div class="container">
+            <blockquote>
+                "It costs that much because it took me fucking hours."
+            </blockquote>
+            <p class="quote-attr">— The unofficial motto</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <p class="section-label">Kind Words</p>
+            <h2 class="section-title">People who get it</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Absolutely stunning work. The detail is incredible and it's even more beautiful in person. Worth every cent."</p>
+                    <span class="testimonial-author">— Happy Customer</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"I asked for something custom and Kerryn absolutely nailed it. My living room has never looked so good."</p>
+                    <span class="testimonial-author">— Happy Customer</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"The quality is unreal. You can tell how much time and love goes into every piece. I'll be back for more."</p>
+                    <span class="testimonial-author">— Happy Customer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="section-label">Get in Touch</p>
+                    <h2 class="section-title">Want something made?<br>Let's talk.</h2>
+                    <p>Whether it's a custom order, a question, or just to say you love my work (I accept compliments freely), drop me a message.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">✉</span>
+                            <a href="mailto:hello@theaudacityofthread.com">hello@theaudacityofthread.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Cape Town, South Africa — shipping worldwide</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">What's this about?</label>
+                            <select id="subject" name="subject">
+                                <option value="custom">Custom Order</option>
+                                <option value="inquiry">General Inquiry</option>
+                                <option value="collab">Collaboration</option>
+                                <option value="compliment">Just a Compliment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me what you're after..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send It</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>The Audacity of Thread</h3>
+                    <p>Handcrafted with love &amp; profanity.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#services">What I Make</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Audacity of Thread. All rights reserved. Yes, even the swear words.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
