@@ -240,25 +240,39 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-
-        // For now, just show a confirmation
-        // Replace with actual form endpoint (Formspree, Netlify Forms, etc.)
         const btn = contactForm.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
-        btn.textContent = 'Sent! ✓';
-        btn.style.backgroundColor = 'var(--color-primary)';
-        btn.style.borderColor = 'var(--color-primary)';
+        btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.backgroundColor = '';
-            btn.style.borderColor = '';
-            btn.disabled = false;
-            contactForm.reset();
-        }, 3000);
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                btn.textContent = 'Sent! ✓';
+                btn.style.backgroundColor = 'var(--color-primary)';
+                btn.style.borderColor = 'var(--color-primary)';
+                contactForm.reset();
+            } else {
+                btn.textContent = 'Oops — try again';
+                btn.style.backgroundColor = '#c75454';
+            }
+        })
+        .catch(() => {
+            btn.textContent = 'Oops — try again';
+            btn.style.backgroundColor = '#c75454';
+        })
+        .finally(() => {
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
+            }, 3000);
+        });
     });
 
 });
