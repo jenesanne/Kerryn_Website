@@ -275,6 +275,121 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Load showcase from Google Sheet ---
+    const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR35cJsKo5InFpdwNPrTM-melB0WoWYjdStRcfWiynu2QpwESSfXfTj7SLdrGFUX5iGAnwjeTTvFVPu/pub?output=csv';
+    const showcaseGrid = document.getElementById('showcaseGrid');
+
+    function parseCSV(text) {
+        const lines = [];
+        let current = '';
+        let inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+            const ch = text[i];
+            if (ch === '"') {
+                if (inQuotes && text[i + 1] === '"') {
+                    current += '"';
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (ch === ',' && !inQuotes) {
+                lines.push(current);
+                current = '';
+            } else if ((ch === '\n' || ch === '\r') && !inQuotes) {
+                if (current || lines.length) {
+                    lines.push(current);
+                    current = '';
+                }
+                if (lines.length) break; // we process row by row below
+            } else {
+                current += ch;
+            }
+        }
+        return lines;
+    }
+
+    function parseCSVRows(text) {
+        const rows = [];
+        let i = 0;
+        while (i < text.length) {
+            const row = [];
+            let field = '';
+            let inQuotes = false;
+            while (i < text.length) {
+                const ch = text[i];
+                if (ch === '"') {
+                    if (inQuotes && text[i + 1] === '"') {
+                        field += '"';
+                        i++;
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (ch === ',' && !inQuotes) {
+                    row.push(field);
+                    field = '';
+                } else if ((ch === '\n' || ch === '\r') && !inQuotes) {
+                    row.push(field);
+                    field = '';
+                    i++;
+                    if (text[i] === '\n') i++;
+                    break;
+                } else {
+                    field += ch;
+                }
+                i++;
+            }
+            if (i >= text.length && field) row.push(field);
+            if (row.length > 0 && row.some(f => f.trim())) rows.push(row);
+        }
+        return rows;
+    }
+
+    function renderShowcase(rows) {
+        // rows[0] = headers, rest = data
+        if (rows.length < 2) {
+            showcaseGrid.innerHTML = '<p style="text-align:center;color:rgba(59,47,47,0.5);">No reviews yet — be the first!</p>';
+            return;
+        }
+
+        const headers = rows[0].map(h => h.trim().toLowerCase());
+        const nameIdx = headers.indexOf('name');
+        const ratingIdx = headers.indexOf('rating');
+        const reviewIdx = headers.indexOf('review');
+        const imageIdx = headers.indexOf('image');
+
+        let html = '';
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const name = row[nameIdx] || 'Anonymous';
+            const rating = parseInt(row[ratingIdx]) || 5;
+            const review = row[reviewIdx] || '';
+            const image = row[imageIdx] || '';
+
+            if (!review.trim()) continue;
+
+            const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+
+            html += `
+                <div class="showcase-card">
+                    ${image ? `<div class="showcase-image"><img src="${image}" alt="Photo from ${name}" loading="lazy"></div>` : ''}
+                    <div class="showcase-content">
+                        <div class="showcase-stars">${stars}</div>
+                        <p>"${review}"</p>
+                        <span class="showcase-author">— ${name}</span>
+                    </div>
+                </div>`;
+        }
+
+        showcaseGrid.innerHTML = html || '<p style="text-align:center;color:rgba(59,47,47,0.5);">No reviews yet — be the first!</p>';
+    }
+
+    fetch(SHEET_CSV_URL)
+        .then(res => res.text())
+        .then(text => renderShowcase(parseCSVRows(text)))
+        .catch(() => {
+            showcaseGrid.innerHTML = '<p style="text-align:center;color:rgba(59,47,47,0.5);">Couldn\'t load reviews right now.</p>';
+        });
+
     // --- Showcase modal ---
     const showcaseModal = document.getElementById('showcaseModal');
     const openBtn = document.getElementById('openShowcaseForm');
