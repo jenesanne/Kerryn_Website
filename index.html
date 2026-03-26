@@ -66,7 +66,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#services">What I Make</a></li>
-                <li><a href="#testimonials">Kind Words</a></li>
+                <li><a href="#showcase">Showcase</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
         </div>
@@ -445,31 +445,99 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials section" id="testimonials">
+    <!-- Client Showcase Section -->
+    <section class="showcase section" id="showcase">
         <div class="container">
-            <p class="section-label">Kind Words</p>
-            <h2 class="section-title">People who get it</h2>
+            <p class="section-label">Client Showcase</p>
+            <h2 class="section-title">Worn, loved & shown off</h2>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"Absolutely stunning work. The detail is incredible and it's even more beautiful in person. Worth every cent."</p>
-                    <span class="testimonial-author">— Happy Customer</span>
+            <div class="showcase-grid">
+                <!-- Approved client submissions will go here -->
+                <div class="showcase-card">
+                    <div class="showcase-image">
+                        <img src="images/gallery/product-01.jpg" alt="Client wearing handmade piece">
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-stars">★★★★★</div>
+                        <p>"Absolutely stunning work. The detail is incredible and it's even more beautiful in person. Worth every cent."</p>
+                        <span class="showcase-author">— Happy Customer</span>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"I asked for something custom and Kerryn absolutely nailed it. My living room has never looked so good."</p>
-                    <span class="testimonial-author">— Happy Customer</span>
+                <div class="showcase-card">
+                    <div class="showcase-image">
+                        <img src="images/gallery/product-06.jpg" alt="Client wearing handmade piece">
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-stars">★★★★★</div>
+                        <p>"I asked for something custom and Kerryn absolutely nailed it. My living room has never looked so good."</p>
+                        <span class="showcase-author">— Happy Customer</span>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"The quality is unreal. You can tell how much time and love goes into every piece. I'll be back for more."</p>
-                    <span class="testimonial-author">— Happy Customer</span>
+                <div class="showcase-card">
+                    <div class="showcase-image">
+                        <img src="images/gallery/product-12.jpg" alt="Client wearing handmade piece">
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-stars">★★★★★</div>
+                        <p>"The quality is unreal. You can tell how much time and love goes into every piece. I'll be back for more."</p>
+                        <span class="showcase-author">— Happy Customer</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="showcase-cta">
+                <p>Got a piece from us? We'd love to see it on you.</p>
+                <button class="btn btn-primary" id="openShowcaseForm">Share Your Look</button>
             </div>
         </div>
     </section>
+
+    <!-- Showcase Submission Modal -->
+    <div class="showcase-modal" id="showcaseModal">
+        <div class="showcase-modal-content">
+            <button class="showcase-modal-close" id="closeShowcaseForm">&times;</button>
+            <h3>Share Your Look</h3>
+            <p>Show us how you're rocking your piece. Upload a photo and tell us what you think.</p>
+            <form id="showcaseForm" action="https://formspree.io/f/mpqozkyr" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_subject" value="New Client Showcase Submission">
+                <div class="form-group">
+                    <label for="showcase-name">Your Name</label>
+                    <input type="text" id="showcase-name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="showcase-email">Email</label>
+                    <input type="email" id="showcase-email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" name="rating" id="ratingValue" value="5">
+                </div>
+                <div class="form-group">
+                    <label for="showcase-review">Your Review</label>
+                    <textarea id="showcase-review" name="review" rows="4" required placeholder="Tell us what you love about your piece..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="showcase-photo">Upload a Photo</label>
+                    <div class="file-upload-wrapper" id="fileUploadWrapper">
+                        <input type="file" id="showcase-photo" name="photo" accept="image/*" required>
+                        <div class="file-upload-display">
+                            <span class="file-upload-icon">📸</span>
+                            <span class="file-upload-text">Click or drag to upload</span>
+                        </div>
+                        <img class="file-upload-preview" id="filePreview" alt="Preview">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
@@ -540,6 +608,7 @@
                     <a href="#about">About</a>
                     <a href="#gallery">Gallery</a>
                     <a href="#services">What I Make</a>
+                    <a href="#showcase">Showcase</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">

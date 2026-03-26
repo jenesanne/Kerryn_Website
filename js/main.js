@@ -275,4 +275,131 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Showcase modal ---
+    const showcaseModal = document.getElementById('showcaseModal');
+    const openBtn = document.getElementById('openShowcaseForm');
+    const closeBtn = document.getElementById('closeShowcaseForm');
+
+    openBtn.addEventListener('click', () => {
+        showcaseModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        showcaseModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    showcaseModal.addEventListener('click', (e) => {
+        if (e.target === showcaseModal) {
+            showcaseModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && showcaseModal.classList.contains('active')) {
+            showcaseModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // --- Star rating ---
+    const stars = document.querySelectorAll('#starRating .star');
+    const ratingInput = document.getElementById('ratingValue');
+
+    function setStars(value) {
+        stars.forEach(star => {
+            star.classList.toggle('active', parseInt(star.dataset.value) <= value);
+        });
+        ratingInput.value = value;
+    }
+
+    setStars(5); // default
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => setStars(parseInt(star.dataset.value)));
+        star.addEventListener('mouseenter', () => {
+            stars.forEach(s => {
+                s.classList.toggle('active', parseInt(s.dataset.value) <= parseInt(star.dataset.value));
+            });
+        });
+    });
+
+    document.getElementById('starRating').addEventListener('mouseleave', () => {
+        setStars(parseInt(ratingInput.value));
+    });
+
+    // --- File upload preview ---
+    const fileInput = document.getElementById('showcase-photo');
+    const filePreview = document.getElementById('filePreview');
+    const fileText = document.querySelector('.file-upload-text');
+
+    fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                filePreview.src = e.target.result;
+                filePreview.classList.add('visible');
+                fileText.textContent = file.name;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // --- Showcase form submission ---
+    const showcaseForm = document.getElementById('showcaseForm');
+
+    showcaseForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const btn = showcaseForm.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        fetch(showcaseForm.action, {
+            method: 'POST',
+            body: new FormData(showcaseForm),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                btn.textContent = 'Sent! ✓';
+                btn.style.backgroundColor = 'var(--color-primary)';
+                btn.style.borderColor = 'var(--color-primary)';
+                showcaseForm.reset();
+                setStars(5);
+                filePreview.classList.remove('visible');
+                fileText.textContent = 'Click or drag to upload';
+                setTimeout(() => {
+                    showcaseModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.borderColor = '';
+                    btn.disabled = false;
+                }, 2000);
+            } else {
+                btn.textContent = 'Oops — try again';
+                btn.style.backgroundColor = '#c75454';
+                btn.disabled = false;
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                }, 3000);
+            }
+        })
+        .catch(() => {
+            btn.textContent = 'Oops — try again';
+            btn.style.backgroundColor = '#c75454';
+            btn.disabled = false;
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+            }, 3000);
+        });
+    });
+
 });
