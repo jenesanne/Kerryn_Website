@@ -910,6 +910,25 @@ img {
     color: var(--color-accent);
 }
 
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--color-accent);
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
+}
+
 .footer-bottom {
     padding-top: 2rem;
     text-align: center;
