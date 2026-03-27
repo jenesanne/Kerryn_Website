@@ -435,13 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Showcase modal ---
     const showcaseModal = document.getElementById('showcaseModal');
-    const openBtn = document.getElementById('openShowcaseForm');
     const closeBtn = document.getElementById('closeShowcaseForm');
-
-    openBtn.addEventListener('click', () => {
-        showcaseModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
 
     closeBtn.addEventListener('click', () => {
         showcaseModal.classList.remove('active');
