@@ -944,6 +944,79 @@ img {
     align-items: start;
 }
 
+/* CTA Cards */
+.contact-cta-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-cta-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: var(--color-white);
+    border: 1.5px solid var(--color-blush);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: left;
+    font-family: var(--font-body);
+}
+
+.contact-cta-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(59, 47, 47, 0.08);
+}
+
+.contact-cta-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.contact-cta-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-text);
+}
+
+.contact-cta-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Contact form header */
+.contact-form-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form-back {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    cursor: pointer;
+    padding: 0.3rem 0;
+    transition: color var(--transition);
+}
+
+.contact-form-back:hover {
+    color: var(--color-text);
+}
+
+.contact-form-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--color-text);
+}
+
 .contact-info p {
     color: var(--color-text-light);
     margin-bottom: 2rem;
@@ -1039,14 +1112,6 @@ img {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: var(--color-blush);
-}
-
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C17754' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    cursor: pointer;
 }
 
 .form-group textarea {

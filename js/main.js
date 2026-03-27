@@ -234,6 +234,36 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => observer.observe(el));
 
 
+    // --- Contact CTA cards ---
+    const ctaCards = document.getElementById('contactFormWrapper');
+    const ctaCardsContainer = document.querySelector('.contact-cta-cards');
+    const contactFormBack = document.getElementById('contactFormBack');
+    const contactFormLabel = document.getElementById('contactFormLabel');
+    const contactSubject = document.getElementById('contactSubject');
+
+    // "Share Your Look" opens the showcase modal
+    document.getElementById('ctaReview').addEventListener('click', () => {
+        document.getElementById('showcaseModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Order & Compliment cards show the contact form
+    ['ctaOrder', 'ctaCompliment'].forEach(id => {
+        document.getElementById(id).addEventListener('click', function() {
+            const subject = this.dataset.subject;
+            contactSubject.value = subject;
+            contactFormLabel.textContent = subject;
+            ctaCardsContainer.style.display = 'none';
+            ctaCards.style.display = '';
+        });
+    });
+
+    contactFormBack.addEventListener('click', () => {
+        ctaCards.style.display = 'none';
+        ctaCardsContainer.style.display = '';
+        contactForm.reset();
+    });
+
     // --- Contact form handling ---
     const contactForm = document.getElementById('contactForm');
 
@@ -256,6 +286,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.backgroundColor = 'var(--color-primary)';
                 btn.style.borderColor = 'var(--color-primary)';
                 contactForm.reset();
+                setTimeout(() => {
+                    ctaCards.style.display = 'none';
+                    ctaCardsContainer.style.display = '';
+                }, 2000);
             } else {
                 btn.textContent = 'Oops — try again';
                 btn.style.backgroundColor = '#c75454';

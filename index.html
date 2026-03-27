@@ -458,7 +458,7 @@
 
             <div class="showcase-cta">
                 <p>Got a piece from us? We'd love to see it on you.</p>
-                <button class="btn btn-primary" id="openShowcaseForm">Share Your Look</button>
+                <button class="btn btn-primary" id="openShowcaseForm">Leave a Review</button>
             </div>
         </div>
     </section>
@@ -526,8 +526,30 @@
                         </a>
                     </div>
                 </div>
-                <div class="contact-form-wrapper">
+                <div class="contact-cta-cards">
+                    <button class="contact-cta-card" id="ctaReview" aria-label="Share your look">
+                        <span class="contact-cta-icon">📸</span>
+                        <h4>Share Your Look</h4>
+                        <p>Leave a review &amp; show off your piece</p>
+                    </button>
+                    <button class="contact-cta-card" id="ctaOrder" data-subject="Custom Order" aria-label="Place an order">
+                        <span class="contact-cta-icon">🧶</span>
+                        <h4>Place an Order</h4>
+                        <p>Custom pieces made just for you</p>
+                    </button>
+                    <button class="contact-cta-card" id="ctaCompliment" data-subject="Just a Compliment" aria-label="Send a compliment">
+                        <span class="contact-cta-icon">💬</span>
+                        <h4>Just a Compliment</h4>
+                        <p>Because everyone deserves nice things said to them</p>
+                    </button>
+                </div>
+                <div class="contact-form-wrapper" id="contactFormWrapper" style="display:none;">
+                    <div class="contact-form-header">
+                        <button class="contact-form-back" id="contactFormBack" aria-label="Back to options">&larr; Back</button>
+                        <span class="contact-form-label" id="contactFormLabel"></span>
+                    </div>
                     <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpqozkyr" method="POST">
+                        <input type="hidden" name="subject" id="contactSubject" value="">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required placeholder="Your name">
@@ -535,15 +557,6 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">What's this about?</label>
-                            <select id="subject" name="subject">
-                                <option value="custom">Custom Order</option>
-                                <option value="inquiry">General Inquiry</option>
-                                <option value="collab">Collaboration</option>
-                                <option value="compliment">Just a Compliment</option>
-                            </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
