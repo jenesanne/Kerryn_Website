@@ -468,8 +468,8 @@
         <div class="showcase-modal-content">
             <button class="showcase-modal-close" id="closeShowcaseForm">&times;</button>
             <h3>Share Your Look</h3>
-            <p>Show us how you're rocking your piece. Upload a photo and tell us what you think.</p>
-            <form id="showcaseForm" action="https://formspree.io/f/mpqozkyr" method="POST" enctype="multipart/form-data">
+            <p>Tell us what you think of your piece — we'd love to hear from you!</p>
+            <form id="showcaseForm" action="https://formspree.io/f/mpqozkyr" method="POST">
                 <input type="hidden" name="_subject" value="New Client Showcase Submission">
                 <div class="form-group">
                     <label for="showcase-name">Your Name</label>
@@ -493,17 +493,6 @@
                 <div class="form-group">
                     <label for="showcase-review">Your Review</label>
                     <textarea id="showcase-review" name="review" rows="4" required placeholder="Tell us what you love about your piece..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="showcase-photo">Upload a Photo</label>
-                    <div class="file-upload-wrapper" id="fileUploadWrapper">
-                        <input type="file" id="showcase-photo" name="photo" accept="image/*" required>
-                        <div class="file-upload-display">
-                            <span class="file-upload-icon">📸</span>
-                            <span class="file-upload-text">Click or drag to upload</span>
-                        </div>
-                        <img class="file-upload-preview" id="filePreview" alt="Preview">
-                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-full">Submit</button>
             </form>

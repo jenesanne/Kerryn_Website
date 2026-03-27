@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const review = row[reviewIdx] || '';
             const image = row[imageIdx] || '';
 
-            if (!review.trim()) continue;
+            if (!review.trim() && !image.trim()) continue;
 
             const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
 
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${image ? `<div class="showcase-image"><img src="${image}" alt="Photo from ${name}" loading="lazy"></div>` : ''}
                     <div class="showcase-content">
                         <div class="showcase-stars">${stars}</div>
-                        <p>"${review}"</p>
+                        ${review.trim() ? `<p>"${review}"</p>` : ''}
                         <span class="showcase-author">— ${name}</span>
                     </div>
                 </div>`;
@@ -445,24 +445,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setStars(parseInt(ratingInput.value));
     });
 
-    // --- File upload preview ---
-    const fileInput = document.getElementById('showcase-photo');
-    const filePreview = document.getElementById('filePreview');
-    const fileText = document.querySelector('.file-upload-text');
-
-    fileInput.addEventListener('change', () => {
-        const file = fileInput.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                filePreview.src = e.target.result;
-                filePreview.classList.add('visible');
-                fileText.textContent = file.name;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
     // --- Showcase form submission ---
     const showcaseForm = document.getElementById('showcaseForm');
 
@@ -481,21 +463,28 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => {
             if (response.ok) {
-                btn.textContent = 'Sent! ✓';
-                btn.style.backgroundColor = 'var(--color-primary)';
-                btn.style.borderColor = 'var(--color-primary)';
                 showcaseForm.reset();
                 setStars(5);
-                filePreview.classList.remove('visible');
-                fileText.textContent = 'Click or drag to upload';
+                showcaseForm.style.display = 'none';
+                const ty = document.createElement('div');
+                ty.className = 'showcase-thankyou';
+                ty.innerHTML = `
+                    <h4>Thanks for your review! 🧶</h4>
+                    <p>Want to share a photo of your piece? Send it to us:</p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/theaudacityofthread" target="_blank" rel="noopener">@theaudacityofthread</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:hello@theaudacityofthread.com">hello@theaudacityofthread.com</a></p>
+                `;
+                showcaseForm.parentNode.insertBefore(ty, showcaseForm.nextSibling);
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
                 setTimeout(() => {
                     showcaseModal.classList.remove('active');
                     document.body.style.overflow = '';
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.borderColor = '';
-                    btn.disabled = false;
-                }, 2000);
+                    showcaseForm.style.display = '';
+                    ty.remove();
+                }, 5000);
             } else {
                 btn.textContent = 'Oops — try again';
                 btn.style.backgroundColor = '#c75454';

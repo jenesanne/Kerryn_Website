@@ -907,6 +907,29 @@ img {
     display: block;
 }
 
+/* Thank You Message */
+.showcase-thankyou {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.showcase-thankyou h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.showcase-thankyou p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.showcase-thankyou a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
 /* ============================================
    CONTACT
    ============================================ */
