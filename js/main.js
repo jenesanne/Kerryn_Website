@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     ty.remove();
                     ctaCardsContainer.style.display = '';
-                }, 4000);
+                }, 7000);
             } else {
                 btn.textContent = 'Oops — try again';
                 btn.style.backgroundColor = '#c75454';
@@ -521,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.style.overflow = '';
                     showcaseForm.style.display = '';
                     ty.remove();
-                }, 5000);
+                }, 7000);
             } else {
                 btn.textContent = 'Oops — try again';
                 btn.style.backgroundColor = '#c75454';
