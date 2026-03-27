@@ -282,14 +282,23 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => {
             if (response.ok) {
-                btn.textContent = 'Sent! ✓';
-                btn.style.backgroundColor = 'var(--color-primary)';
-                btn.style.borderColor = 'var(--color-primary)';
                 contactForm.reset();
+                ctaCards.style.display = 'none';
+                const ty = document.createElement('div');
+                ty.className = 'contact-thankyou';
+                ty.innerHTML = `
+                    <h4>Message sent! 🧶</h4>
+                    <p>Thanks for your message — a member of our team will get back to you as soon as possible.</p>
+                `;
+                ctaCards.parentNode.insertBefore(ty, ctaCards);
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
                 setTimeout(() => {
-                    ctaCards.style.display = 'none';
+                    ty.remove();
                     ctaCardsContainer.style.display = '';
-                }, 2000);
+                }, 4000);
             } else {
                 btn.textContent = 'Oops — try again';
                 btn.style.backgroundColor = '#c75454';
