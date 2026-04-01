@@ -488,6 +488,25 @@ img {
     gap: 1.5rem;
 }
 
+.gallery-category-header {
+    grid-column: 1 / -1;
+    padding: 2rem 0 0.5rem;
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-category-header:first-child {
+    padding-top: 0;
+}
+
+.gallery-category-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 .gallery-item {
     position: relative;
     overflow: hidden;

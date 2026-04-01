@@ -53,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Gallery filter ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const categoryHeaders = document.querySelectorAll('.gallery-category-header');
 
     // --- Load More ---
-    const ITEMS_PER_PAGE = 12;
+    const ITEMS_PER_PAGE = 33;
     let visibleCount = ITEMS_PER_PAGE;
     const loadMoreBtn = document.getElementById('loadMoreBtn');
 
@@ -63,6 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
         let shown = 0;
         let totalMatching = 0;
+
+        // Show/hide category headers based on filter
+        categoryHeaders.forEach(header => {
+            const matches = activeFilter === 'all' || header.dataset.category === activeFilter;
+            header.style.display = matches ? '' : 'none';
+        });
 
         galleryItems.forEach(item => {
             const matches = activeFilter === 'all' || item.dataset.category === activeFilter;
