@@ -22,8 +22,9 @@ This is a static single-page site built with vanilla HTML, CSS, and JavaScript. 
 ## Features
 
 - **Responsive single-page layout** — looks good on desktop, tablet, and mobile
-- **Gallery with 59 product images** (54 crochet, 5 macramé) with category filter tabs
-- **Load More pagination** — shows 12 items at a time to keep page loads fast
+- **Gallery with 33 named product images** organised by category (Circular Ponchos & Jackets, Design Motif Square Jackets, Granny Square, Hexagonal Granny Square, Summer Tops & Skirts, Macramé) with filter tabs
+- **Category section headers** — gallery grouped under subfolder headings with individual piece names
+- **Load More pagination** — keeps initial page loads fast
 - **Lightbox viewer** — click any gallery image to browse full-size with keyboard navigation (← → Esc)
 - **Scroll-reveal animations** — sections fade in as they enter the viewport via IntersectionObserver
 - **Contact form** with email integration
@@ -51,12 +52,18 @@ This is a static single-page site built with vanilla HTML, CSS, and JavaScript. 
 │   └── main.js             # Nav, gallery filters, lightbox, scroll reveal, contact form
 ├── images/
 │   ├── kerryn-profile.jpg  # About section profile photo
-│   └── gallery/            # 59 optimised product images (800px max, 85% JPEG quality)
-│       ├── product-01.jpg  # Crochet pieces (01–54)
-│       └── product-55.jpg  # Macramé pieces (55–59)
+│   └── gallery/            # 33 optimised product images (800px max, 85% JPEG quality)
+│       ├── circular-ponchos-and-jackets-*.jpg
+│       ├── design-motif-square-jackets-*.jpg
+│       ├── granny-square-*.jpg
+│       ├── hexogonal-granny-square-*.jpg
+│       ├── summer-tops-and-skirts-*.jpg
+│       └── macrame-*.jpg
 ├── .github/
 │   └── workflows/
 │       └── pages.yml       # GitHub Actions deployment workflow
+├── process_images.py       # Image processing script (resize, crop screenshots, censor names)
+├── gallery_manifest.json   # Generated manifest of all gallery images
 ├── CNAME                   # Custom domain config for GitHub Pages
 ├── sitemap.xml             # SEO sitemap
 ├── robots.txt              # Search engine crawl directives
@@ -88,6 +95,16 @@ python3 -m http.server 8000
 # Node
 npx serve .
 ```
+
+### Image Processing
+
+New product images go into subfolders under `images/Raw_Products/Labelled_Crochet_Cardis/` (crochet) or `images/Raw_Products/Macrame_Images/` (macramé). Then run:
+
+```bash
+python process_images.py
+```
+
+This resizes to 800px max, centre-crops screenshots with extreme aspect ratios, censors profanity in display names, and outputs to `images/gallery/` with descriptive filenames.
 
 ## License
 
