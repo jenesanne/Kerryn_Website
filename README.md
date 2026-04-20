@@ -22,7 +22,7 @@ This is a static single-page site built with vanilla HTML, CSS, and JavaScript. 
 ## Features
 
 - **Responsive single-page layout** — looks good on desktop, tablet, and mobile
-- **Gallery with 33 named product images** organised by category (Circular Ponchos & Jackets, Design Motif Square Jackets, Granny Square, Hexagonal Granny Square, Summer Tops & Skirts, Macramé) with filter tabs
+- **Gallery with 39 named product images** organised by category (Circular Ponchos & Jackets, Design Motif Square Jackets, Granny Square, Hexagonal Granny Square, Summer Tops & Skirts, Macramé) with filter tabs
 - **Category section headers** — gallery grouped under subfolder headings with individual piece names
 - **Load More pagination** — keeps initial page loads fast
 - **Lightbox viewer** — click any gallery image to browse full-size with keyboard navigation (← → Esc)
@@ -52,7 +52,7 @@ This is a static single-page site built with vanilla HTML, CSS, and JavaScript. 
 │   └── main.js             # Nav, gallery filters, lightbox, scroll reveal, contact form
 ├── images/
 │   ├── kerryn-profile.jpg  # About section profile photo
-│   └── gallery/            # 33 optimised product images (800px max, 85% JPEG quality)
+│   └── gallery/            # 39 optimised product images (800px max, 85% JPEG quality)
 │       ├── circular-ponchos-and-jackets-*.jpg
 │       ├── design-motif-square-jackets-*.jpg
 │       ├── granny-square-*.jpg
