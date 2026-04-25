@@ -68,6 +68,17 @@ img {
     padding: 8rem 0;
 }
 
+/* Reduce work for below-the-fold sections until scrolled into view. */
+.gallery,
+.pricing,
+.services,
+.showcase,
+.faq,
+.contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+
 /* --- Typography --- */
 .section-label {
     font-family: var(--font-body);
@@ -626,6 +637,12 @@ img {
     color: var(--color-blush);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+.gallery-item-caption-boost {
+    letter-spacing: 0.06em;
+    font-size: 0.72rem;
+    line-height: 1.4;
 }
 
 .load-more-btn {

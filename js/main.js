@@ -55,6 +55,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const categoryHeaders = document.querySelectorAll('.gallery-category-header');
 
+    // Hint browsers to decode non-critical images off the main render path.
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        if (!img.getAttribute('decoding')) {
+            img.setAttribute('decoding', 'async');
+        }
+    });
+
+    const enhanceGalleryCaptions = () => {
+        galleryItems.forEach(item => {
+            const overlayText = item.querySelector('.gallery-item-overlay p');
+            if (!overlayText) return;
+
+            let header = item.previousElementSibling;
+            while (header && !header.classList.contains('gallery-category-header')) {
+                header = header.previousElementSibling;
+            }
+
+            if (!header) return;
+
+            const hoursChip = header.querySelector('.hours-chip');
+            const hoursText = hoursChip ? hoursChip.textContent.trim() : '';
+            const baseLabel = overlayText.dataset.baseLabel || overlayText.textContent.trim();
+
+            overlayText.dataset.baseLabel = baseLabel;
+            overlayText.textContent = hoursText
+                ? `${baseLabel} • ${hoursText} • Custom orders open`
+                : `${baseLabel} • Custom orders open`;
+            overlayText.classList.add('gallery-item-caption-boost');
+        });
+    };
+
+    enhanceGalleryCaptions();
+
     // --- Load More ---
     const ITEMS_PER_PAGE = 33;
     let visibleCount = ITEMS_PER_PAGE;
