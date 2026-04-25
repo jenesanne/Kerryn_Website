@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.section-label, .section-title, .section-subtitle, ' +
         '.about-image, .about-content, ' +
         '.gallery-filters, .gallery-item, ' +
-        '.service-card, .testimonial-card, ' +
+        '.pricing-card, .service-card, .testimonial-card, .faq-item, ' +
         '.contact-info, .contact-form-wrapper'
     );
 

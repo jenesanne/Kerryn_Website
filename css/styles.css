@@ -372,6 +372,60 @@ img {
 }
 
 /* ============================================
+   BRAND STRIP
+   ============================================ */
+.cheeky-strip {
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.cheeky-strip p {
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   PRICING PHILOSOPHY
+   ============================================ */
+.pricing {
+    background: var(--color-bg-alt);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-card {
+    background: var(--color-white);
+    border: 1.5px solid var(--color-blush);
+    padding: 1.8rem;
+}
+
+.pricing-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark);
+}
+
+.pricing-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+}
+
+.pricing-closer {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    max-width: 700px;
+}
+
+/* ============================================
    ABOUT
    ============================================ */
 .about-grid {
@@ -491,7 +545,7 @@ img {
 .gallery-category-header {
     grid-column: 1 / -1;
     padding: 2rem 0 0.5rem;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--color-accent);
     margin-bottom: 0.5rem;
 }
 
@@ -502,9 +556,24 @@ img {
 .gallery-category-header h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--color-text);
     font-weight: 600;
     letter-spacing: 0.02em;
+}
+
+.hours-chip {
+    display: inline-block;
+    margin-left: 0.6rem;
+    padding: 0.2rem 0.55rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    border: 1px solid var(--color-blush);
+    background: rgba(232, 213, 196, 0.35);
+    vertical-align: middle;
 }
 
 .gallery-item {
@@ -857,6 +926,38 @@ img {
 
 .showcase-modal-close:hover {
     color: var(--color-accent);
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq {
+    background: var(--color-bg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border: 1.5px solid var(--color-blush);
+    border-left: 4px solid var(--color-accent);
+    padding: 1.4rem 1.5rem;
+}
+
+.faq-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    margin-bottom: 0.6rem;
+}
+
+.faq-item p {
+    color: var(--color-text-light);
+    font-size: 0.94rem;
 }
 
 /* Star Rating */
@@ -1302,6 +1403,8 @@ img {
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
+    .pricing-grid,
+    .faq-grid,
     .services-grid,
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1383,8 +1486,21 @@ img {
 
     /* Services */
     .services-grid,
+    .pricing-grid,
+    .faq-grid,
     .showcase-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-category-header h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .hours-chip {
+        margin-left: 0;
     }
 
     /* Contact */
