@@ -180,24 +180,15 @@ img {
 }
 
 .nav-logo {
-    display: inline-flex;
-    align-items: center;
-    transition: transform var(--transition);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    transition: color var(--transition);
 }
 
-.nav-logo-img {
-    height: 64px;
-    width: auto;
-    display: block;
-    transition: height var(--transition);
-}
-
-.nav-logo:hover {
-    transform: scale(1.03);
-}
-
-.navbar.scrolled .nav-logo-img {
-    height: 52px;
+.navbar.scrolled .nav-logo {
+    color: var(--color-dark);
 }
 
 .nav-links {
