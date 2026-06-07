@@ -180,15 +180,24 @@ img {
 }
 
 .nav-logo {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--color-white);
-    transition: color var(--transition);
+    display: inline-flex;
+    align-items: center;
+    transition: transform var(--transition);
 }
 
-.navbar.scrolled .nav-logo {
-    color: var(--color-dark);
+.nav-logo-img {
+    height: 64px;
+    width: auto;
+    display: block;
+    transition: height var(--transition);
+}
+
+.nav-logo:hover {
+    transform: scale(1.03);
+}
+
+.navbar.scrolled .nav-logo-img {
+    height: 52px;
 }
 
 .nav-links {
