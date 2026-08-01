@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     const categoryHeaders = document.querySelectorAll('.gallery-category-header');
+    const pairBreaks = document.querySelectorAll('.micro-pair-break');
 
     // Hint browsers to decode non-critical images off the main render path.
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enhanceGalleryCaptions();
 
     // --- Load More ---
-    const ITEMS_PER_PAGE = 33;
+    const ITEMS_PER_PAGE = 80;
     let visibleCount = ITEMS_PER_PAGE;
     const loadMoreBtn = document.getElementById('loadMoreBtn');
 
@@ -102,6 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryHeaders.forEach(header => {
             const matches = activeFilter === 'all' || header.dataset.category === activeFilter;
             header.style.display = matches ? '' : 'none';
+        });
+
+        pairBreaks.forEach(pairBreak => {
+            const matches = activeFilter === 'all' || pairBreak.dataset.category === activeFilter;
+            pairBreak.style.display = matches ? '' : 'none';
         });
 
         galleryItems.forEach(item => {
