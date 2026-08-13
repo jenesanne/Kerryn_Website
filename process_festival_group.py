@@ -1,15 +1,15 @@
 """Process the MecrameFestivalGroup images into the gallery."""
 
 import json
-import os
 import re
+from pathlib import Path
 
 from PIL import Image
 
-BASE = "/Users/jasoncole/Python/Github/Kerryn_Website"
-GALLERY_DIR = os.path.join(BASE, "images/gallery")
-MANIFEST_PATH = os.path.join(BASE, "gallery_manifest.json")
-SRC_BASE = os.path.join(BASE, "images/Macrame/MecrameFestivalGroup")
+BASE_DIR = Path(__file__).resolve().parent
+GALLERY_DIR = BASE_DIR / "images" / "gallery"
+MANIFEST_PATH = BASE_DIR / "gallery_manifest.json"
+SRC_BASE = BASE_DIR / "images" / "Macrame" / "MecrameFestivalGroup"
 MAX_SIZE = 800
 
 
@@ -68,7 +68,7 @@ NEW_IMAGES = [
 ]
 
 # Load existing manifest
-with open(MANIFEST_PATH) as f:
+with MANIFEST_PATH.open(encoding="utf-8") as f:
     manifest = json.load(f)
 
 print(f"📋 Existing manifest: {len(manifest)} items")
@@ -76,8 +76,8 @@ print(f"\n📂 Processing MecrameFestivalGroup ({len(NEW_IMAGES)} images)\n")
 
 for folder, src_fname, name in NEW_IMAGES:
     out_name = f"macrame-{slugify(name)}.jpg"
-    src = os.path.join(SRC_BASE, folder, src_fname)
-    out = os.path.join(GALLERY_DIR, out_name)
+    src = SRC_BASE / folder / src_fname
+    out = GALLERY_DIR / out_name
 
     w, h = resize_and_save(src, out)
     manifest.append(
@@ -92,7 +92,7 @@ for folder, src_fname, name in NEW_IMAGES:
     print(f"  ✅ {name:30s} -> {out_name} ({w}x{h})")
 
 # Save updated manifest
-with open(MANIFEST_PATH, "w") as f:
+with MANIFEST_PATH.open("w", encoding="utf-8") as f:
     json.dump(manifest, f, indent=2)
 
 print(f"\n✅ Done! Manifest now has {len(manifest)} items.")
