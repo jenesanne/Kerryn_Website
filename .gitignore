@@ -2,7 +2,25 @@
 __pycache__/
 *.pyc
 .DS_Store
+.vscode/
+
+# Local project artifacts and raw media that should not be tracked
 images/Raw_Products/
+images/Tutorials/
+**/Adobe Premiere Pro Auto-Save/
+**/Adobe Premiere Pro Audio Previews/
+**/Midjourney/
+**/Midjourney Photos/
+
+# Adobe and media editor snapshots
+*.prproj
+*.prlock
+*.prin
+*.mp4
+*.mov
+*.pdf
+*.ai
+
+# Local profile or source imagery not used in the published site
 images/Kerryn_nobg.png
 images/Kerryn_Image.jpeg
-*.pdf
